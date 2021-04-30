@@ -15,6 +15,30 @@
 </head>
 
 <body>
+	<div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">LuisF3</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="alert alert-signOut" id="alertSignOut" role="alert">
+						Tus datos de usuario se eliminaron correctamente!
+					</div>
+					<p id="modalTextLogin">-Quieres cancelar tú Suscripción?</p>
+					<p id="modalTextLogin2">-Tus datos de usuario se eliminarán de esta app!</p>
+					<p id="modalTextLogout">-Suscripción Cancelada</p>
+					<p id="modalTextLogout2">-Espero verte pronto!</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn modal-cancel" id="modalCancel"
+						data-bs-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn modal-signOut" id="btnSignOut">Cancelar Suscripción</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<nav class="navbar navbar-expand-lg navbar-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Developer LuisF3</a>
@@ -38,15 +62,16 @@
 						<a class="nav-link" href="#">Pascal</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="admin.html" id="navbarDropdown" role="button"
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">
 							Admin
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="adminHtml.html">HTML, CSS, JS</a></li>
+							<li><a class="dropdown-item" href="adminPages/adminHtml.html">HTML, CSS, JS</a></li>
+							<li><a class="dropdown-item" href="adminPages/userList.html">Lista de Usuarios</a></li>
 						</ul>
 					</li>
-					<li class="nav-item" id=" logOutNav"></li>
+					<li class="nav-item" id="logOutNav"></li>
 				</ul>
 			</div>
 			<div class="loginButton-wrapper" id="loginButtonWrapper">
@@ -55,7 +80,6 @@
 			</div>
 		</div>
 	</nav>
-
 	<nav class="navbar navbar-search">
 		<div class="container">
 			<form class="form-search">
@@ -145,8 +169,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col p-0">
