@@ -136,6 +136,14 @@
 	border-right: 3px solid #81c784;
 	border-bottom: 3px solid #81c784;
 }
+.img-port-wrapper .img-port .alert {
+	margin: 3%;
+    text-align: center;
+	font-weight: bold;
+}
+.img-port-wrapper .img-port .alert:hover {
+	font-style: italic;
+}
 .img-port-wrapper .img-port .title {
 	margin: 0 0 1% 0;
 	text-align: center;
@@ -402,8 +410,9 @@
 	background-color: #121212;
 	color: #81c784;
 	font-weight: bold;
+	text-align: center;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 } 
 .project-list-wrapper .list-group .list-group-item:hover {
@@ -411,20 +420,20 @@
 	font-style: italic;
 	color: #ba68c8;
 } 
-.project-list-wrapper .list-group .list-group-item .button-wrapper .edit {
+.project-list-wrapper .list-group .list-group-item .edit {
 	border: 1px solid #fff176;
 	color: #fff176;
 }
-.project-list-wrapper .list-group .list-group-item .button-wrapper  .edit:hover {
+.project-list-wrapper .list-group .list-group-item .edit:hover {
 	border: 1px solid #fff176;
 	background-color: #fff176;
 	color: #333;
 }
-.project-list-wrapper .list-group .list-group-item .button-wrapper .delete {
+.project-list-wrapper .list-group .list-group-item .delete {
 	border: 1px solid #e57373;
 	color: #e57373;;
 }
-.project-list-wrapper .list-group .list-group-item .button-wrapper .delete:hover {
+.project-list-wrapper .list-group .list-group-item .delete:hover {
 	border: 1px solid #e57373;
 	background-color: #e57373;
 	color: #333;
