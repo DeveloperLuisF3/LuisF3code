@@ -5,13 +5,11 @@ let usersAdminRef = db.collection("admins");
 
 // variables
 let listItems;
-/* 
-let createAdmin = document.getElementById('createAdmin');
 
 // initialize app
 let initializeList = () => {
-	createAdmin.addEventListener('click', hola, false);
-}; */
+	console.log("Yo Soy userList");
+};
 
 // observer userList
 usersListRef.onSnapshot((querySnapshot) => {
@@ -68,8 +66,4 @@ let createAdmin = (userId, image, name, email) => {
 		});
 };
 
-/* let hola = () => {
-	console.log("Hola LuisF3, userList");
-}; */
-
-/* window.addEventListener(`load`, initializeList, false); */
+window.addEventListener(`load`, initializeList, false);
