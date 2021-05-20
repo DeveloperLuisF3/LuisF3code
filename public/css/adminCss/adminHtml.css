@@ -47,7 +47,10 @@
 	border-right: 3px solid #ba68c8;
 	border-bottom: 3px solid #ba68c8;
     background-color: #212529;
-	margin: 0 0 3% 0 ;
+	width: 100%;
+    height: 75vh;
+	margin: 0 0 5% 0 ;
+    overflow: scroll;
 } 
 .img-wrapper:hover {
 	border-left: 3px solid #ba68c8;
@@ -55,6 +58,16 @@
 	border-right: 3px solid #81c784;
 	border-bottom: 3px solid #81c784;
 } 
+.img-wrapper .alert {
+	width: 95%;
+    height: 15%;
+	margin: 3%;
+    text-align: center;
+	font-weight: bold;
+}
+.img-wrapper .alert:hover {
+	font-style: italic;
+}
 .img-card {
     margin: 5px;
     text-align: center;    
@@ -136,14 +149,14 @@
 	border-right: 3px solid #81c784;
 	border-bottom: 3px solid #81c784;
 }
-.img-port-wrapper .img-port .alert {
+/* .img-port-wrapper .img-port .alert {
 	margin: 3%;
     text-align: center;
 	font-weight: bold;
 }
 .img-port-wrapper .img-port .alert:hover {
 	font-style: italic;
-}
+} */
 .img-port-wrapper .img-port .title {
 	margin: 0 0 1% 0;
 	text-align: center;
@@ -230,6 +243,14 @@
 	border-top: 3px solid #ba68c8;
 	border-right: 3px solid #81c784;
 	border-bottom: 3px solid #81c784;
+}
+.form-wrapper .alert {
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+	text-align: center;
+	color: #0f5132;
+	font-style: italic;
+	font-weight: bold;
 }
 .form-wrapper .form .form-group {
 	margin-bottom: 3%;
