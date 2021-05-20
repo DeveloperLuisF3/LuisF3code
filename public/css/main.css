@@ -52,17 +52,26 @@ body {
 	font-style: italic;
 	color: #ba68c8;
 }
-.modal .modal-content .modal-body .alert-signOut {
+.modal .modal-content .modal-body .alert {
 	color: #0f5132;
     background-color: #d1e7dd;
     border-color: #badbcc;
 }
-
 .modal .modal-content .modal-footer {
 	border-top: 1px solid #81c784;
 }
 .modal .modal-content .modal-footer:hover {
 	border-top: 1px solid #ba68c8;
+}
+.modal .modal-content .modal-footer .nam-img-footer {
+	text-align: left;
+	color: #81c784;
+	font-weight: bold;
+}
+.modal .modal-content .modal-footer .nam-img-footer:hover {
+	font-weight: bold;
+	font-style: italic;
+	color: #ba68c8;
 }
 .modal .modal-content .modal-footer .modal-signOut {
 	border: 1px solid #81c784;
