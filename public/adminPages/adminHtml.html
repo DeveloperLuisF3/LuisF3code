@@ -19,11 +19,11 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">LuisF3</h5>
+					<h5 class="modal-title">LuisF3</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<div class="alert alert-signOut" id="alertSignOut" role="alert">
+					<div class="alert" id="alertSignOut" role="alert">
 						Tus datos de usuario se eliminaron correctamente!
 					</div>
 					<p id="modalTextLogin">-Quieres cancelar tú Suscripción?</p>
@@ -35,6 +35,56 @@
 					<button type="button" class="btn modal-cancel" id="modalCancel"
 						data-bs-dismiss="modal">Cerrar</button>
 					<button type="button" class="btn modal-signOut" id="btnSignOut">Cancelar Suscripción</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalCreateHtml" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Create Project Html</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body" id="modalBodyHtml">
+					<div class="alert" id="alertCreateHtml" role="alert">
+						Producto creado con exito!!!
+					</div>
+					<p id="textModalHtml">Estás seguro de crear este producto???</p>
+				</div>
+				<div class="modal-footer" id="modalFooterHtml">
+					<button type="submit" class="btn modal-signOut" id="submitProjectHtml">
+						Aceptar
+					</button>
+					<button type="button" class="btn modal-cancel" data-bs-dismiss="modal">
+						Cancelar
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalElimImg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Eliminar imagen</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body" id="modalBodyImg">
+					<div class="alert" id="alertDeleteImg" role="alert">
+						El archivo se elimino correctamente.
+						Acción exitosa!!!
+					</div>
+					<!-- <p id="textModalImg">Está segura(o) de eliminar este archivo???</p> -->
+				</div>
+				<div class="modal-footer" id="modalFooterImg">
+					<!--<p class="nam-img-footer">${nombre}</p>
+					<button type="button" class="btn modal-signOut" onclick="deleteImgStor('${nombre}', '${index}')">
+						Aceptar
+					</button>
+					<button type="button" class="btn modal-cancel" data-dismiss="modal">
+						Cancelar
+					</button>-->
 				</div>
 			</div>
 		</div>
@@ -94,49 +144,60 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<div class="gallery-title">
+				<div class="gallery-title" id="galleryTitle">
 					<h3 class="title">Image Gallery</h3>
-					<button class="btn" id="openImgWrapper">See Gallery</button>
-					<button id="closeImgWrapper" class="btn">Close Gallery</button>
+					<button class="btn" id="openImgWrapper">
+						See Gallery
+					</button>
+					<button id="closeImgWrapper" class="btn">
+						Close Gallery
+					</button>
 				</div>
 				<div class="row img-wrapper" id="imgWrapper">
-					<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+					<div class="alert alert-danger" id="alertWithoutImg" role="alert">
+						Ingrese un archivo, porfavor!!!!
+					</div>
+					<div class="alert alert-success" id="alertLoadImg" role="alert">
+						El archivo se subió correctamente.
+						Carga exitosa!!!
+					</div>
+					<!--div class="col-6 col-sm-4 col-md-3 col-lg-2" id="${index}" >
 						<div class="w-100">&nbsp</div>
 						<div class="img-card">
-							<img src="../img/ardulink.png" alt="..." class="img-thumbnail img" />
+							<img src="${el.url}" alt="..." class="img-thumbnail img" />
 							<div class="img-body">
-								<small class="title">luisf</small>
+								<small class="title">${el.nombre}</small>
 							</div>
 							<ul class="list-group list-group-flush img-wrapper-btn">
-								<a href="#info"><button type="button" class="btn carry-send">Send to</button></a>
-								<button type="button" class="btn del-img" data-toggle="modal"
-									data-target="#modal-elim-img">Delete</button>
+								<a href="#info"><button type="button" class="btn carry-send">
+									Send to
+								</button></a>
+								<button type="button" class="btn del-img" data-bs-toggle="modal" data-bs-target="#modalElimImg"  onclick="passDataToDelete('${el.nombre}', '${index}')">
+									Delete
+								</button>
 							</ul>
 						</div>
 						<div class="w-100">&nbsp</div>
-					</div>
+					</div>-->
 				</div>
 				<div class="col-12">
 					<div class="imgVidButton-wrapper">
 						<h3 class="title">Upload Image</h3>
-						<button class="btn" id="openImgPort">Upload Image</button>
-						<button class="btn" id="closeImgPort">Close ImagePort</button>
+						<button class="btn" id="openImgPort">
+							Upload Image
+						</button>
+						<button class="btn" id="closeImgPort">
+							Close ImagePort
+						</button>
 					</div>
 				</div>
 				<div class="col-12">
 					<div class="card img-port-wrapper" id="imgPortWrapper">
 						<form class="img-port">
-							<div class="alert alert-danger" id="alertWithoutImg" role="alert">
-								Ingrese un archivo, porfavor!!!!
-							</div>
-							<div class="alert alert-success" id="alertLoadImg" role="alert">
-								El archivo se subió correctamente.
-								Carga exitosa!!!
-							</div>
 							<h3 class="title">Save your image</h3>
 							<div class="form-group">
-								<label for="exampleFormControlFile1">Product Image:</label>
-								<input type="file" class="form-control-file img" id="exampleFormControlFile1">
+								<label for="img">Product Image:</label>
+								<input type="file" class="form-control-file img" id="img">
 							</div>
 							<div class="button-wrapper">
 								<a href="#imgWrapper">
@@ -150,62 +211,74 @@
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<div class="save-title-wrapper">
+				<div class="save-title-wrapper" id="uploadProject">
 					<h3 class="title">Upload Project</h3>
-					<button id="openFormHtml" class="btn">Upload Project</button>
-					<button id="closeFormHtml" class="btn">Close Form</button>
+					<button id="openFormHtml" class="btn">
+						Upload Project
+					</button>
+					<button id="closeFormHtml" class="btn">
+						Close Form
+					</button>
 				</div>
 			</div>
 			<div class="col-12">
 				<div class="card form-wrapper" id="formHtmlWrapper">
+					<div class="alert" id="alertImgForm" role="alert">
+						La imagen se agregó correctamente!!!
+					</div>
 					<form class="form">
 						<div class="form-group">
-							<label for="formGroupExampleName" class="form-label">
+							<label for="htmlProjectName" class="form-label">
 								Project Name:
 							</label>
-							<input type="text" class="form-control" id="formGroupExampleName"
+							<input type="text" class="form-control" id="htmlProjectName"
 								placeholder="what's the name of this project?" required />
 						</div>
 						<div class="form-group">
-							<label for="formGroupTechnology" class="form-label">
+							<label for="htmlProjectTech" class="form-label">
 								Project Technology:
 							</label>
-							<input type="text" class="form-control" id="formGroupTechnology"
+							<input type="text" class="form-control" id="htmlProjectTech"
 								placeholder="With what technology is this project carried out?" required />
 						</div>
 						<div class="form-group">
-							<label for="FormControlDescription" class="form-label">Project
+							<label for="htmlProjectDescription" class="form-label">Project
 								Description:</label>
-							<textarea class="form-control" id="FormControlDescription" rows="3"
+							<textarea class="form-control" id="htmlProjectDescription" rows="3"
 								placeholder="Describe this project!" required></textarea>
 						</div>
 						<div class="form-group">
-							<label for="formGroupDocumentation" class="form-label">
+							<label for="htmlProjectDoc" class="form-label">
 								Project Documentation:
 							</label>
-							<input type="text" class="form-control" id="formGroupDocumentation"
-								placeholder="GitHub address!" required />
-						</div>
-						<div class="form-group">
-							<label for="formGroupVideo" class="form-label">
-								Project Video:
-							</label>
-							<input type="text" class="form-control" id="formGroupVideo" placeholder="YouTube address!"
+							<input type="text" class="form-control" id="htmlProjectDoc" placeholder="GitHub address!"
 								required />
 						</div>
 						<div class="form-group">
-							<label for="product-image">Project Image:</label>
-							<a href="#galeria">
-								<button type="button" class="btn" id="voy-a-gallery">Select Image</button>
-							</a>
-							<!-- <div class="alert alert-success" id="alert-img-aform" role="alert">
+							<label for="htmlProjectVideo" class="form-label">
+								Project Video:
+							</label>
+							<input type="text" class="form-control" id="htmlProjectVideo" placeholder="YouTube address!"
+								required />
+						</div>
+						<div class="form-group">
+							<div class="alert" id="alertImgHtml" role="alert">
 								La imagen se agregó correctamente!!!
-							</div> -->
-							<input type="text" class="form-control" id="product-image"
-								aria-describedby="inputGroupFileAddon01" placeholder="How this project???" required>
+							</div>
+							<label for="htmlProjectImage">Project Image:</label>
+							<a href="#galleryTitle">
+								<button type="button" class="btn" id="goToImgGallery">
+									Select Image
+								</button>
+							</a>
+							<input type="text" class="form-control" id="htmlProjectImage"
+								aria-describedby=" inputGroupFileAddon01" placeholder="How this project???" required>
 						</div>
 						<div class="button-wrapper">
-							<button type="submit" class="btn">Submit Project</button>
+							<button type="button" class="btn" id="setModalHtml" data-bs-toggle="modal"
+								data-bs-target="#modalCreateHtml">
+								Submit Project
+							</button>
 						</div>
 					</form>
 				</div>
