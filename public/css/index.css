@@ -46,7 +46,24 @@
 	border-right: 3px solid #81c784;
 	border-bottom: 3px solid #81c784;
 }
-
+.card-description .card-header {
+	border-bottom: 5px solid #4caf50;
+	display: flex;
+    justify-content: center;
+}
+.card-description .card-header:hover {
+	border-bottom: 5px solid #9c27b0;
+}
+.card-description .card-header .signClose {
+	font-weight: bold;
+    color: #4caf50;
+	cursor: pointer;
+}
+.card-description .card-header .signClose:hover {
+	color: #9c27b0;
+	transform: scale(1.1);
+	transition: 1s;
+}
 .card-description .card-body {
 	width: 80%;
     margin: 5% auto;
@@ -69,7 +86,6 @@
 }
 .card-description .card-body .card-text {
 	color: #6c757d;
-	display: flex;
 	text-align: justify;
 }
 .card-description .card-body  a {
@@ -106,6 +122,52 @@
 	font-style: italic;
 	font-weight: bold;
 	text-shadow: 3px 3px 3px #81c784;
+}
+.gallery-wrapper {
+	margin-bottom: 5%;
+}
+.coverPage {
+	/* border: 1px solid yellow; */
+	width: 100%;
+    height: 90vh;
+	margin: 10% 0 10% 0;
+}
+.coverPage .header {
+	margin-bottom: 5%;
+	text-align: center;
+	font-weight: bold;
+	color: #81c784;
+	text-shadow: 2px 2px 2px #ba68c8;
+}
+.coverPage .header:hover {
+	font-weight: bold;
+	font-style: italic;
+	color: #ba68c8;
+	text-shadow: 2px 2px 2px #81c784;
+}
+.coverPage .body {
+	width: 100%;
+    height: 60%;
+	margin-bottom: 3%;
+}
+.coverPage .body .img {
+	width: 100%;
+    height: 100%;
+	border-radius: 3%;
+}
+.coverPage .footer {
+	margin: 5% 0;
+	display: flex;
+    justify-content: center;
+}
+.coverPage .footer .btn {
+	border: 1px solid #81c784;
+	color: #81c784;
+}
+.coverPage .footer .btn:hover {
+	border: 1px solid #81c784;
+	background-color: #81c784;
+	color: #fff;
 }
 .card-gallery {
 	border: 1px solid #81c784;
