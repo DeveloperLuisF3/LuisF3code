@@ -98,6 +98,17 @@
 	background-color: #81c784;
 	color: #fff;
 }
+.img-card .img-wrapper-btn .carry-edit {
+	width: 100%;
+	margin-bottom: 3%;
+	border: 1px solid #fff176;
+	color: #fff176;
+}
+.img-card .img-wrapper-btn .carry-edit:hover {
+	border: 1px solid #fff176;
+	background-color: #fff176;
+	color: #333;
+}
 .img-card .img-wrapper-btn .del-img {
 	width: 100%;
 	margin-bottom: 3%;
@@ -109,6 +120,7 @@
 	background-color: #e57373;
 	color: #fff;
 }
+
 .imgVidButton-wrapper {
 	margin: 0 0 3% 0;
 }
@@ -317,6 +329,16 @@
 	border-right: 3px solid #81c784;
 	border-bottom: 3px solid #81c784;
 }
+.update-form-wrapper .alert {
+	background-color: #d1e7dd;
+	border-color: #badbcc;
+	text-align: center;
+	color: #0f5132;
+	font-weight: bold;
+}
+.update-form-wrapper .alert:hover {
+	font-style: italic;
+}
 .update-form-wrapper .title {
 	margin-bottom: 3%;
 	text-align: center;
@@ -345,6 +367,16 @@
 }
 .update-form-wrapper .id-wrapper .id:hover {
 	color: #81c784;
+}
+.update-form-wrapper .update-form .alert {
+	background-color: #d1e7dd;
+	border-color: #badbcc;
+	text-align: center;
+	color: #0f5132;
+	font-weight: bold;
+}
+.update-form-wrapper .update-form .alert:hover {
+	font-style: italic;
 }
 .update-form-wrapper .update-form .form-group {
 	margin-bottom: 3%;
