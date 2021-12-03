@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/index.css">
-	<link rel="shortcut icon" href="img/luisf3.png">
+	<link rel="shortcut icon" href="img/lf3.png">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 	</div>
-	<nav class="navbar navbar-expand-lg navbar-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Developer LuisF3</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -50,9 +50,9 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">HTML,CSS,JS</a>
+						<a class="nav-link active" aria-current="page" href="#">Projectos</a>
 					</li>
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<a class="nav-link" href="#">Javascript</a>
 					</li>
 					<li class="nav-item">
@@ -60,7 +60,7 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Pascal</a>
-					</li>
+					</li> -->
 					<li class="nav-item dropdown" id="dropdownAdmin">
 						<!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">
@@ -78,29 +78,34 @@
 			</div>
 			<div class="loginButton-wrapper" id="loginButtonWrapper">
 				<button class="btn" id="btnLogin" type="btn">Iniciar Sesión</button>
-				<img class="imgAvatar" src="img/ardulink.png" alt="UserAvatar" />
+				<img class="imgAvatar" src="img/lf3.png" alt="UserAvatar" />
 			</div>
 		</div>
 	</nav>
-	<nav class="navbar navbar-search">
-		<div class="container">
+	<nav class="navbar navbar-search" id="navbarSearch">
+		<div class="container" id="navbarSearchWrapper">
 			<form class="form-search">
-				<input class="form-control me-2" type="search" placeholder="Search Project" aria-label="Search">
-				<button class="btn" type="submit">Search</button>
+				<input class="form-control me-2" id="searching" type="search" placeholder="Search Project"
+					aria-label="Search" autocomplete="off">
+				<!-- <button class="btn" id="activateSearch" type="button">Search</button> -->
 			</form>
 		</div>
 	</nav>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-12 col-xl-8">
-				<div class="vidHtml-wrapper">
+			<div class="col" id="searchWrapper"></div>
+		</div>
+		<div class="row" id="reproductorHtml">
+			<!-- <div class="col-12 col-xl-8">
+				<div class="vidHtml-wrapper" id="vidHtmlWrapper">
 					<iframe src="https://www.youtube.com/embed/bjeF6WNPVvg" frameborder="0"
 						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-					</iframe>
-				</div>
+					</iframe> 
+				</div> 
 			</div>
 			<div class="col-12 col-xl-4">
-				<div class="card card-description">
+				<div class="card card-description" id="cardDescription">
+					<div class="card-header">X</div>
 					<div class="card-body">
 						<h4 class="title">Variables</h4>
 						<h6 class="subtitle">HTML, CSS, JS</h6>
@@ -112,18 +117,16 @@
 						<small>Created By LuisF3</small>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
-	<div class="container mb-5">
-		<div class="row">
-			<div class="col">
+	<div class="container">
+		<div class="row" id="resultWrapper">
+			<div class="col-12">
 				<div class="title-galery">
-					<h1>PROJECT GALLERY</h1>
+					<h1>Resultado:</h1>
 				</div>
 			</div>
-		</div>
-		<div class="row">
 			<div class="col-12 col-lg-6 col-xl-3">
 				<div class="card card-gallery">
 					<div class="gallery-img">
@@ -139,10 +142,36 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-lg-6 col-xl-3">
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="title-galery" id="titleGalleryHtml">
+					<h1>PROJECT GALLERY</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row gallery-wrapper" id="draftHtmlWrapper">
+			<div class="col-12">
+				<div class="coverPage" id="coverPage">
+					<div class="header">
+						<h1 class="card-title">WEB DEVELOPMEN</h1>
+					</div>
+					<div class="body">
+						<iframe class="img" src="https://www.youtube.com/embed/exlHooJcaMQ"></iframe>
+					</div>
+					<div class="footer">
+						<a href="#navbar">
+							<button class="btn" id="buttonLogin" type="button">
+								Inicia Sesión
+							</button>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="col-12 col-lg-6 col-xl-3">
 				<div class="card card-gallery">
 					<div class="gallery-img">
-						<img src="img/carrusel.png" class="card-img-top" alt="...">
+						<img src="img/instagram.png" class="card-img-top" alt="...">
 					</div>
 					<div class="card-body">
 						<h5 class="card-title">Variables</h5>
@@ -153,22 +182,7 @@
 						<a href="#" class="btn btn-outline-success">Ver Video</a>
 					</div>
 				</div>
-			</div>
-			<div class="col-12 col-lg-6 col-xl-3">
-				<div class="card card-gallery">
-					<div class="gallery-img">
-						<img src="img/ardulink.png" class="card-img-top" alt="...">
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Variables</h5>
-						<p class="card-text">HTML, CSS, JS
-						</p>
-					</div>
-					<div class="card-footer">
-						<a href="#" class="btn">Ver Video</a>
-					</div>
-				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="container-fluid">
@@ -193,6 +207,8 @@
 	<script src="js/firebase.js"></script>
 	<script src="js/users/login.js"></script>
 	<script src="js/users/adminApp.js"></script>
+	<script src="js/adminPages/aHtml/htmlApp.js"></script>
+	<script src="js/adminPages/aHtml/searchProject.js"></script>
 </body>
 
 </html>
