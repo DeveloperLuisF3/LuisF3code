@@ -82,6 +82,15 @@ body {
 	background-color: #81c784;
 	color: #fff;
 } 
+.modal .modal-content .modal-footer .modal-update {
+	border: 1px solid #fff176;
+	color: #fff176;
+}
+.modal .modal-content .modal-footer .modal-update:hover {
+	border: 1px solid #fff176;
+	background-color: #fff176;
+	color: #333;
+}
 .modal .modal-content .modal-footer .modal-cancel {
 	border: 1px solid #e57373;
 	color: #e57373;
