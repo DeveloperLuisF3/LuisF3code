@@ -19,7 +19,7 @@ firebase.auth().onAuthStateChanged((cu) => {
 
 let getAdmin = (currentuser) => {
 	let currentAdminUser = db.collection('admins').doc(currentuser);
-
+	// console.log(currentAdminUser);
 	currentAdminUser.get().then((doc) => {
 		if (doc.exists) {
 			adminItemDb = doc.data();
@@ -41,7 +41,7 @@ let setAdminNav = (adminItemDb) => {
 		$('#dropdownAdmin').hide(2000);
 	} else {
 		document.querySelector('#dropdownAdmin').innerHTML = `
-			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
 				Admin
 			</a>
 			<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -51,7 +51,7 @@ let setAdminNav = (adminItemDb) => {
 				</li>
 			</ul>
 		`
-		$('#dropdownAdmin').show();
+		$('#dropdownAdmin').show(2000);
 	}
 };
 
