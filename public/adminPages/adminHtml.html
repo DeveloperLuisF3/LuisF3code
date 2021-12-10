@@ -148,18 +148,25 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="../index.html">HTML,CSS,JS</a>
+						<a class="nav-link" aria-current="page" href="../index.html">Proyectos</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Javascript</a>
+					<li class="nav-item hideLink">
+						<a class="nav-link" href="../pages/contact.html">Contacto</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Automatic JS</a>
+					<li class="nav-item dropdown" id="dropdownAdmin">
+						<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+							data-bs-toggle="dropdown" aria-expanded="true">
+							Admin
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item active" href="#">Project admin</a></li>
+							<li><a class="dropdown-item" href="./userList.html">Lista de Usuarios</a></li>
+							<li><a class="dropdown-item" href="./adminUsers.html">Usuario Administrador</a>
+							</li>
+							<li><a class="dropdown-item" href="./visitorList.html">Lista de visitantes</a>
+							</li>
+						</ul>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Pascal</a>
-					</li>
-					<li class="nav-item dropdown" id="dropdownAdmin"></li>
 					<li class="nav-item" id="logOutNav"></li>
 				</ul>
 			</div>
@@ -350,7 +357,7 @@
 								Project Name:
 							</label>
 							<input type="text" class="form-control" id="htmlEditName" aria-describedby="emailHelp"
-								placeholder="Edit project name" required />
+								placeholder="Edit project name" disabled />
 						</div>
 						<div class="form-group">
 							<label for="htmlEditTech" class="form-label">
@@ -439,7 +446,7 @@
 		<div class="row">
 			<div class="col p-0">
 				<footer>
-					<div class="footer-wrapper">
+					<div class="navbar navbar-fixed-bottom">
 						<h1>Developer LuisF3</h1>
 						<small>Created for LuisF3</small>
 					</div>

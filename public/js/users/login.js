@@ -1,22 +1,23 @@
 // firestore DB
 var db = firebase.firestore();
 let usersRef = db.collection("users");
+let visitorsRef = db.collection("visitors");
 
 // variables
 let btnLogin = document.getElementById('btnLogin');
 let btnSignOut = document.getElementById('btnSignOut');
 let clickLogin = document.getElementById('clickLogin');
-// let buttonLogin = document.getElementById('buttonLogin');
 let user;
 
 // initialize app
 let initializeLogin = () => {
+	$('#dropdownAdmin').hide();
 	btnLogin.addEventListener('click', loginWithGoogle, false);
 	btnSignOut.addEventListener('click', leave, false);
-	// buttonLogin.addEventListener('click', loginWithGoogle, false);
 	$('#alertSignOut').hide();
 	$('#modalTextLogout').hide();
 	$('#modalTextLogout2').hide();
+	$('.hideLink').hide(2000);
 };
 
 // current user
@@ -55,6 +56,7 @@ let setUser = (user) => {
 		btnLogin.addEventListener('click', function () {
 			loginWithGoogle();
 		})
+		$('.hideLink').hide(2000);
 	} else {
 		document.querySelector('#logOutNav').innerHTML = `
 			<a class="nav-link" data-bs-toggle="modal" data-bs-target="#signOutModal" href="#">Cancelar Suscripción</a>
@@ -68,6 +70,7 @@ let setUser = (user) => {
 		btnLogOut.addEventListener('click', function () {
 			logOut();
 		})
+		$('.hideLink').show(2000);
 	}
 };
 
@@ -83,10 +86,27 @@ let createUser = (user) => {
 	})
 		.then(() => {
 			console.log("user created!");
+			createVisitor(user);
 		})
 		.catch((error) => {
 			console.log("Que gusto verte de nuevo!");
 		});
+};
+
+// create visitors
+let createVisitor = (visitor) => {
+	let visitorCreationDate = new Date();
+	visitorsRef.doc(visitor.uid).set({
+		visitorId: visitor.uid,
+		name: visitor.displayName,
+		email: visitor.email,
+		image: visitor.photoURL,
+		date: visitorCreationDate
+	}).then(() => {
+		console.log("Visitor successfully created!!!");
+	}).catch((error) => {
+		console.log("Registered Visitor");
+	})
 };
 
 // logOut user
@@ -126,6 +146,30 @@ let signOut = () => {
 		console.log(error);
 	});
 };
+
+// deleteFromAdmin 
+/* let deleteFromAdmin = (dfa) => {
+	let userClean = dfa;
+	usersRef.doc(userClean)
+		.delete()
+		.then(() => {
+			signOutFromAdmin(userClean);
+			console.log("User Deleted");
+		}).catch((error) => {
+			console.log(error);
+		});
+
+};
+let signOutFromAdmin = (userClean) => {
+	userClean.delete().then(() => {
+		user = undefined;
+		setUser(user);
+		setNav();
+		console.log("User SignOut");
+	}).catch((error) => {
+		console.log(error);
+	});
+}; */
 
 // after signOut
 let setNav = () => {

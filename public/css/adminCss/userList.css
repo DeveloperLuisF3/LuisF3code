@@ -62,3 +62,12 @@
 	background-color: #81c784;
 	color: #fff;
 }
+.user-list-wrapper .list-group .list-group-item .userDelete {
+	border: 1px solid #e57373;
+	color: #e57373;
+}
+.user-list-wrapper .list-group .list-group-item .userDelete:hover {
+	border: 1px solid #e57373;
+	background-color: #e57373;
+	color: #fff;
+}

@@ -6,11 +6,12 @@ let currentuser;
 let adminItemDb;
 
 let initializeAdminApp = () => {
+	$('#dropdownAdmin').hide();
 	console.log("Yo Soy adminApp");
 };
 
 firebase.auth().onAuthStateChanged((cu) => {
-	if (!cu) $('#dropdownAdmin').hide(2000);
+	if (!cu) $('#dropdownAdmin').hide();
 	else {
 		currentuser = cu.uid;
 		getAdmin(currentuser);
@@ -37,21 +38,37 @@ let getAdmin = (currentuser) => {
 
 let setAdminNav = (adminItemDb) => {
 	if (!adminItemDb) {
-		// document.querySelector('#dropdownAdmin').innerHTML = ``
-		$('#dropdownAdmin').hide(2000);
+		$('#dropdownAdmin').hide();
 	} else {
+		$('#dropdownAdmin').show();
 		document.querySelector('#dropdownAdmin').innerHTML = `
-			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+			data-bs-toggle="dropdown" aria-expanded="false">
 				Admin
 			</a>
 			<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<li><a class="dropdown-item" href="adminPages/adminHtml.html">HTML, CSS, JS</a></li>
-				<li><a class="dropdown-item" href="adminPages/userList.html">Lista de Usuarios</a></li>
-				<li><a class="dropdown-item" href="adminPages/adminUsers.html">Usuario Administrador</a>
+				<li>
+					<a class="dropdown-item" href="../adminPages/adminHtml.html">
+						HTML, CSS, JS
+					</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="../adminPages/userList.html">
+						Lista de Usuarios
+					</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="../adminPages/adminUsers.html">
+						Usuario Administrador
+					</a>
+				</li>
+				<li>
+					<a class="dropdown-item" href="../adminPages/visitorList.html">
+						Lista de visitantes
+					</a>
 				</li>
 			</ul>
 		`
-		$('#dropdownAdmin').show(2000);
 	}
 };
 

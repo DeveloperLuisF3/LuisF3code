@@ -1,10 +1,9 @@
 // firestore DB
 var db = firebase.firestore();
-var projectHtmlRef = db.collection('projectHtml');
+var projectHtmlRef = db.collection("projectHtml").orderBy("date", "desc");
 
 // initialize app
 let initializeHtmlApp = () => {
-
 	$('#titleGalleryHtml').hide();
 	$('#vidHtmlWrapper').hide();
 	$('#cardDescription').hide();
@@ -39,6 +38,7 @@ firebase.auth().onAuthStateChanged(function (username) {
 let setContent = (reader) => {
 	console.log(reader);
 	if (!reader) {
+		$('#reproductorHtml').hide(2000);
 		$('#navbarSearchWrapper').hide();
 		$('#titleGalleryHtml').hide();
 		document.querySelector('#draftHtmlWrapper').innerHTML = `
@@ -48,12 +48,14 @@ let setContent = (reader) => {
 						<h1 class="card-title">WEB DEVELOPMEN</h1>
 					</div>
 					<div class="body">
-						<iframe class="img" src="https://www.youtube.com/embed/exlHooJcaMQ"></iframe>
+						<video class="img" poster="/img/appPresentation.png" autoplay loop>
+							<source src="/video/introLuisF3.mp4" type="video/mp4">
+						</video>
 					</div>
 					<div class="footer">
 						<a href="#navbar">
-							<button class="btn" id="buttonLogin" type="button">
-								Inicia Sesión
+							<button class="btn" type="button" onclick="loginWithGoogle()">
+								Iniciar Sesión
 							</button>
 						</a>
 					</div>
@@ -62,6 +64,7 @@ let setContent = (reader) => {
 		`
 	} else {
 		$('#navbarSearchWrapper').show(2000);
+		$('#titleGalleryHtml').show(2000);
 		startDB();
 	}
 };
@@ -73,7 +76,7 @@ let fillProjectHtml = (array) => {
 		$('#draftHtmlWrapper').append(
 			`
 				<div class="col-12 col-lg-6 col-xl-3">
-					<div class="card card-gallery" id="${index} card-gallery">
+					<div class="card card-gallery" id="${index}">
 						<div class="gallery-img">
 							<img src="${value.image}" class="card-img-top" alt="...">
 						</div>
@@ -96,6 +99,9 @@ let fillProjectHtml = (array) => {
 };
 
 let setVideoHtml = (index, description, documentation, image, name, technology, video) => {
+	$('#resultWrapper').hide();
+	$('#closeResultWrapper').hide();
+	$('#reproductorHtml').show(2000);
 	document.querySelector('#reproductorHtml').innerHTML = `
 		<div class="col-12 col-xl-8" id="${index}">
 			<div class="vidHtml-wrapper" id="vidHtmlWrapper">
@@ -106,20 +112,25 @@ let setVideoHtml = (index, description, documentation, image, name, technology, 
 		<div class="col-12 col-xl-4">
 			<div class="card card-description" id="cardDescription">
 				<div class="card-header">
-					<h3 class="signClose">X</h3>
+					<h3 class="signClose" onclick="closePlayer()">X</h3>
 				</div>
 				<div class="card-body">
 					<h4 class="title">${name}</h4>
 					<h6 class="subtitle">${technology}</h6>
 					<p class="card-text">${description}</p>
 					<a href="${documentation}" target="_blank">
-						<h4 class="card-link">Ver Documentación</h4>
+						<p class="card-link">Documentación → ${documentation}</p>
 					</a>
 					<small>Created By LuisF3</small>
 				</div>
 			</div>
 		</div>
 	`
+};
+
+let closePlayer = () => {
+	$('#reproductorHtml').hide(2000);
+	$('#titleGalleryHtml').show(2000);
 };
 
 window.addEventListener(`load`, initializeHtmlApp, false);

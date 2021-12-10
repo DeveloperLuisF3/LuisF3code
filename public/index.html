@@ -49,18 +49,12 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Projectos</a>
+					<li class="nav-item hideLink">
+						<a class="nav-link active" aria-current="page" href="#">Proyectos</a>
 					</li>
-					<!-- <li class="nav-item">
-						<a class="nav-link" href="#">Javascript</a>
+					<li class="nav-item hideLink">
+						<a class="nav-link" href="./pages/contact.html">Contacto</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Automatic JS</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Pascal</a>
-					</li> -->
 					<li class="nav-item dropdown" id="dropdownAdmin">
 						<!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">
@@ -70,6 +64,8 @@
 							<li><a class="dropdown-item" href="adminPages/adminHtml.html">HTML, CSS, JS</a></li>
 							<li><a class="dropdown-item" href="adminPages/userList.html">Lista de Usuarios</a></li>
 							<li><a class="dropdown-item" href="adminPages/adminUsers.html">Usuario Administrador</a>
+							</li>
+							<li><a class="dropdown-item" href="adminPages/visitorList.html">Lista de visitantes</a>
 							</li>
 						</ul> -->
 					</li>
@@ -85,34 +81,62 @@
 	<nav class="navbar navbar-search" id="navbarSearch">
 		<div class="container" id="navbarSearchWrapper">
 			<form class="form-search">
-				<input class="form-control me-2" id="searching" type="search" placeholder="Search Project"
-					aria-label="Search" autocomplete="off" disabled>
-				<!-- <button class="btn" id="activateSearch" type="button">Search</button> -->
+				<input class="form-control me-2" id="searching" type="text" placeholder="Search Project"
+					autocomplete="on" />
 			</form>
 		</div>
 	</nav>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
-			<div class="col" id="searchWrapper"></div>
+			<div class="col" id="searchWrapper">
+				<!-- <div class="alert alert-errorSearch alert-dismissible fade show" role="alert">
+					<h1>No hay proyectos!</h1>>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div> -->
+			</div>
 		</div>
+		<div class="row">
+			<div class="close-result-wrapper" id="closeResultWrapper">
+				<h3 class="signClose" id="closeResult">X</h3>
+			</div>
+		</div>
+		<div class="row resultWrapper" id="resultWrapper">
+			<!-- <div class="col-12 col-lg-6 col-xl-3">
+				<div class="card card-gallery" id="${index}">
+					<div class="gallery-img">
+						<img src="${value.image}" class="card-img-top" alt="...">
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">${value.name}</h5>
+						<p class="card-text">${value.technology}
+						</p>
+					</div>
+					<div class="card-footer">
+						<a href="#" class="btn btn-outline-success">Ver Video</a>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	<div class="container-fluid p-0">
 		<div class="row" id="reproductorHtml">
-			<!-- <div class="col-12 col-xl-8">
+			<!-- <div class="col-12 col-xl-8" id="${index}">
 				<div class="vidHtml-wrapper" id="vidHtmlWrapper">
-					<iframe src="https://www.youtube.com/embed/bjeF6WNPVvg" frameborder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+					<iframe src="${video}">
 					</iframe> 
 				</div> 
 			</div>
 			<div class="col-12 col-xl-4">
 				<div class="card card-description" id="cardDescription">
-					<div class="card-header">X</div>
+					<div class="card-header">
+						<h3 class="signClose" onclick="closePlayer()">X</h3>
+					</div>
 					<div class="card-body">
-						<h4 class="title">Variables</h4>
-						<h6 class="subtitle">HTML, CSS, JS</h6>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-							the card's content.</p>
-						<a href="#">
-							<h4 class="card-link">Ver Documentación</h4>
+						<h4 class="title">${name}</h4>
+						<h6 class="subtitle">${technology}</h6>
+						<p class="card-text">${description}</p>
+						<a href="${documentation}" target="_blank">
+							<p class="card-link">Documentación → ${documentation}</p>
 						</a>
 						<small>Created By LuisF3</small>
 					</div>
@@ -121,28 +145,6 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="row" id="resultWrapper">
-			<div class="col-12">
-				<div class="title-galery">
-					<h1>Resultado:</h1>
-				</div>
-			</div>
-			<div class="col-12 col-lg-6 col-xl-3">
-				<div class="card card-gallery">
-					<div class="gallery-img">
-						<img src="img/instagram.png" class="card-img-top" alt="...">
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Variables</h5>
-						<p class="card-text">HTML, CSS, JS
-						</p>
-					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-outline-success">Ver Video</a>
-					</div>
-				</div>
-			</div>
-		</div>
 		<div class="row">
 			<div class="col">
 				<div class="title-galery" id="titleGalleryHtml">
@@ -150,46 +152,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="row gallery-wrapper" id="draftHtmlWrapper">
-			<div class="col-12">
-				<div class="coverPage" id="coverPage">
-					<div class="header">
-						<h1 class="card-title">WEB DEVELOPMEN</h1>
-					</div>
-					<div class="body">
-						<iframe class="img" src="https://www.youtube.com/embed/exlHooJcaMQ"></iframe>
-					</div>
-					<div class="footer">
-						<a href="#navbar">
-							<button class="btn" id="buttonLogin" type="button">
-								Inicia Sesión
-							</button>
-						</a>
-					</div>
-				</div>
-			</div>
-			<!-- <div class="col-12 col-lg-6 col-xl-3">
-				<div class="card card-gallery">
-					<div class="gallery-img">
-						<img src="img/instagram.png" class="card-img-top" alt="...">
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Variables</h5>
-						<p class="card-text">HTML, CSS, JS
-						</p>
-					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-outline-success">Ver Video</a>
-					</div>
-				</div>
-			</div> -->
-		</div>
+		<div class="row gallery-wrapper" id="draftHtmlWrapper"></div>
 	</div>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col p-0">
 				<footer>
-					<div class="footer-wrapper">
+					<div class="navbar navbar-fixed-bottom">
 						<h1>Developer LuisF3 Code</h1>
 						<small>Created By LuisF3</small>
 					</div>

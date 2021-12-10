@@ -14,7 +14,6 @@ let initializeList = () => {
 // observer userList
 usersListRef.onSnapshot((querySnapshot) => {
 	querySnapshot.forEach((doc) => {
-		// console.log(doc.id, " => ", doc.data());
 		listItems = doc.data();
 		fillUserList(listItems);
 	})
@@ -42,6 +41,12 @@ let fillUserList = (listItems) => {
 						)"
 					>
 						Create User Admin
+					</button>
+					<button
+					class="btn userDelete" disabled
+					onclick="deleteFromAdmin('${listItems.userId}')"
+					>
+						Delete user
 					</button>
 				</div>
 			</li>

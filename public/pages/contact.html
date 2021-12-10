@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuisF3 Contacto</title>
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/pages/contact.css">
+    <link rel="shortcut icon" href="../img/lf3.png">
+</head>
+
+<body>
+    <div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">LuisF3</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-signOut" id="alertSignOut" role="alert">
+                        Tus datos de usuario se eliminaron correctamente!
+                    </div>
+                    <p id="modalTextLogin">-Quieres cancelar tú Suscripción?</p>
+                    <p id="modalTextLogin2">-Tus datos de usuario se eliminarán de esta app!</p>
+                    <p id="modalTextLogout">-Suscripción Cancelada</p>
+                    <p id="modalTextLogout2">-Espero verte pronto!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal-cancel" id="modalCancel"
+                        data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn modal-signOut" id="btnSignOut">Cancelar Suscripción</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Developer LuisF3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item hideLink">
+                        <a class="nav-link" aria-current="page" href="../index.html">Proyectos</a>
+                    </li>
+                    <li class="nav-item hideLink">
+                        <a class="nav-link active" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item dropdown" id="dropdownAdmin">
+                        <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../adminPages/adminHtml.html">HTML, CSS, JS</a></li>
+                            <li><a class="dropdown-item" href="../adminPages/userList.html">Lista de Usuarios</a></li>
+                            <li><a class="dropdown-item" href="../adminPages/adminUsers.html">Usuario Administrador</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../adminPages/visitorList.html">Lista de visitantes</a>
+                            </li>
+                        </ul> -->
+                    </li>
+                    <li class="nav-item" id="logOutNav"></li>
+                </ul>
+            </div>
+            <div class="loginButton-wrapper" id="loginButtonWrapper">
+                <button class="btn" id="btnLogin" type="btn">Iniciar Sesión</button>
+                <img class="imgAvatar" src="../img/lf3.png" alt="UserAvatar" />
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-search" id="navbarSearch">
+        <div class="container" id="navbarSearchWrapper">
+            <form class="form-search">
+                <input class="form-control me-2" id="searching" type="text" placeholder="Search Project"
+                    autocomplete="on" />
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title-galery" id="titleGallery">
+                    <h1>Contacto:</h1>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="logo-wrapper" id="logoWrapper">
+                    <div class="logo-header" id="logoHeader">
+                        <img src="../img/lf3.png" class="img" alt="">
+                    </div>
+                    <div class="title-content">
+                        <h2 class="title" id="title">Developer LuisF3</h2>
+                        <p class="email-contact" id="emailContact">developerluisf3@outlook.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row gallery-wrapper" id="contactcoverWrapper">
+            <!-- <div class="col-12">
+                <ul class="list-group social-icon-wrapper" id="iconWrapper">
+                    <li class="list-group-item social-items">
+                        <a href="" class="ancor">
+                            <h3 class="title">Facebook → </h3>
+                        </a>
+                        <a href="">
+                            <div class="icon-wrapper facebook"></div>
+                        </a>
+                    </li>
+                    <li class="list-group-item social-items">
+                        <a href="" class="ancor">
+                            <h3 class="title">Instagram → </h3>
+                        </a>
+                        <a href="">
+                            <div class="icon-wrapper instagram"></div>
+                        </a>
+                    </li>
+                    <li class="list-group-item social-items">
+                        <a href="" class="ancor">
+                            <h3 class="title">Youtube → </h3>
+                        </a>
+                        <a href="">
+                            <div class="icon-wrapper youtube"></div>
+                        </a>
+                    </li>
+                    <li class="list-group-item social-items">
+                        <a href="" class="ancor">
+                            <h3 class="title">GitHub → </h3>
+                        </a>
+                        <a href="">
+                            <div class="icon-wrapper github"></div>
+                        </a>
+                    </li>
+                    <li class="list-group-item social-items">
+                        <a href="" class="ancor">
+                            <h3 class="title">Tiktok → </h3>
+                        </a>
+                        <a href="">
+                            <div class="icon-wrapper tictoc"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col p-0">
+                <footer>
+                    <div class="navbar navbar-fixed-bottom">
+                        <h1>Developer LuisF3 Code</h1>
+                        <small>Created By LuisF3</small>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="../js/bootstrap/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap/bootstrap.min.js"></script>
+    <script src="../js/bootstrap/bootstrap.bundle.min.js.map"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="../js/users/login.js"></script>
+    <script src="../js/users/adminApp.js"></script>
+    <script src="../js/pages/contact.js"></script>
+</body>
+
+</html>

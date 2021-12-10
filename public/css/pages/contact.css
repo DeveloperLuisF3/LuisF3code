@@ -1,0 +1,141 @@
+.ancor {
+    text-decoration: none;
+}
+.ancor:hover {
+    font-style: italic;
+    font-weight: bold;
+    transform: scale(1.07);
+    transition: 2s;
+}
+
+.logo-wrapper {
+    width: 100%;
+    height: 40vh;
+    margin: 5% 0% 5% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (min-width: 992px) {
+    .logo-wrapper {
+        margin-top: 5%;
+    }
+}
+.logo-wrapper .logo-header {
+    width: 150px;
+    padding: 1%;
+    margin-bottom: 1%;
+    /* background-image: url(../../img/lf3.png);
+    background-size: cover; */
+}
+.logo-wrapper .logo-header:hover {
+    transform: scale(1.07);
+    transition: 2s;
+}
+.logo-wrapper .logo-header .img {
+    width: 100%;
+}
+/* media screen and (min-width: 768px) {
+    .logo-wrapper .logo-header {
+        width: 139px;
+        height: 139px;
+    }
+}
+@media screen and (min-width: 992px) {
+    .logo-wrapper .logo-header {
+        width: 121px;
+        height: 121px;
+    }
+}*/
+.logo-wrapper .title-content .title {
+    color: #81c784;
+    text-shadow: 3px 3px 3px #ba68c8;
+}
+.logo-wrapper .title-content .title:hover {
+    color: #ba68c8;
+    text-shadow: #81c784;
+    font-style: italic;
+    transform: scale(1.05);
+    transition: 2s;
+}
+.logo-wrapper .title-content .email-contact {
+    text-align: center;
+    color: #81c784;
+}
+.logo-wrapper .title-content .email-contact:hover {
+    color: #ba68c8;
+    font-weight: bold;
+    transform: scale(1.07);
+    transition: 2s;
+}
+
+.gallery-wrapper {
+	min-height: 77.6vh;
+}
+.social-icon-wrapper {
+    margin: 3% 0 5% 0;
+    /* min-height: 77.6vh; */
+}
+.social-icon-wrapper .social-items {
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.social-icon-wrapper .social-items:hover {
+    background-color: #f3e5f5;
+}
+.social-icon-wrapper .social-items .title {
+    color: #81c784;
+}
+.social-icon-wrapper .social-items .title:hover {
+    color: #ba68c8;
+}
+.social-icon-wrapper .social-items .icon-wrapper {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+.social-icon-wrapper .social-items .icon-wrapper.facebook {
+    background-image: url(../../img/facebook.png);
+}
+.social-icon-wrapper .social-items .icon-wrapper.facebook:hover {
+    transform: rotateY(360deg);
+    transition: 2s;
+}
+.social-icon-wrapper .social-items .icon-wrapper.instagram {
+    background-image: url(../../img/instagram.png);
+}
+.social-icon-wrapper .social-items .icon-wrapper.instagram:hover {
+    transform: rotateY(360deg);
+    transition: 2s;
+}
+.social-icon-wrapper .social-items .icon-wrapper.youtube {
+    background-image: url(../../img/youtube.png);
+}
+.social-icon-wrapper .social-items .icon-wrapper.youtube:hover {
+    transform: rotateY(360deg);
+    transition: 2s;
+}
+.social-icon-wrapper .social-items .icon-wrapper.github {
+    background-image: url(../../img/github.png);
+}
+.social-icon-wrapper .social-items .icon-wrapper.github:hover {
+    transform: rotateY(360deg);
+    transition: 2s;
+}
+.social-icon-wrapper .social-items .icon-wrapper.tictoc {
+    background-image: url(../../img/tiktok.png);
+}
+.social-icon-wrapper .social-items .icon-wrapper.tictoc:hover {
+    transform: rotateY(360deg);
+    transition: 2s;
+}
+.social-icon-wrapper .social-items .icon-wrapper.linkedin {
+    background-image: url(../../img/inkedlin.png);
+}
+.social-icon-wrapper .social-items .icon-wrapper.linkedin:hover {
+    transform: rotateY(360deg);
+    transition: 2s;
+}
