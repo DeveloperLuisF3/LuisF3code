@@ -77,6 +77,24 @@
     margin: 3% 0 5% 0;
     /* min-height: 77.6vh; */
 }
+@media screen and (min-width: 992px) {
+    .social-icon-wrapper {
+        width: 80%;
+        margin: 3% auto 5% auto;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .social-icon-wrapper {
+        width: 75%;
+        margin: 3% auto 5% auto;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .social-icon-wrapper {
+        width: 70%;
+        margin: 3% auto 5% auto;
+    }
+}
 .social-icon-wrapper .social-items {
     background-color: #121212;
     display: flex;
